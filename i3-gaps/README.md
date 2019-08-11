@@ -7,3 +7,6 @@ Note:
 
 ## things to configure
 * i3lock
+
+## things to install in addition
+* rofi <instead of dmenu>
