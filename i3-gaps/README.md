@@ -10,6 +10,8 @@ Note:
 
 ## things to install in addition
 * rofi <instead of dmenu>
+* i3block
 
-## things to install and play around with
-  * pywal : for auto colorschemes that can be applied across all software
+## things to be installed and play around with
+* pywal : for auto colorschemes that can be applied across all software
+* i3Blocks instead of i3Status
