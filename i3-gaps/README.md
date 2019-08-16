@@ -15,4 +15,4 @@ Note:
 ## things to be installed and play around with
 * pywal : for auto colorschemes that can be applied across all software
 * i3Blocks instead of i3Status
-* i3lock configuration with <https://github.com/Ema0/i3lock-fancy>
+* i3lock configuration with manjaro's blurlock https://github.com/manjaro/packages-community/tree/master/i3/i3exit/ - blurlock
