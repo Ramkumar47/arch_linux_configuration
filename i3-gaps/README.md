@@ -6,7 +6,7 @@ Note:
 * "i3exit" script is a manual one for enabling "mod+0" exit commands
 
 ## things to configure
-* i3lock
+* i3lock 
 
 ## things to install in addition
 * rofi <instead of dmenu>
@@ -15,3 +15,4 @@ Note:
 ## things to be installed and play around with
 * pywal : for auto colorschemes that can be applied across all software
 * i3Blocks instead of i3Status
+* i3lock configuration with <https://github.com/Ema0/i3lock-fancy>
