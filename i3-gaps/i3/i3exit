@@ -1,6 +1,8 @@
 #!/bin/sh
+
+# this requires i3lock-blur to be installed from AUR
 lock() {
-    i3lock
+    i3lock -f
 }
 
 case "$1" in
