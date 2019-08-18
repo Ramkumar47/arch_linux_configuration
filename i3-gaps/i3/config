@@ -35,6 +35,7 @@ bindsym $mod+Shift+q kill
 # start program launcher
 # bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+w exec rofi -show window
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -415,3 +416,6 @@ mode "$mode_gaps_outer" {
 
 # wallpaper execution
 exec_always feh --bg-scale /home/ramkumar/Pictures/wallpaper.jpg
+
+# turning numlock always on
+exec_always --no-startup-id numlockx on
