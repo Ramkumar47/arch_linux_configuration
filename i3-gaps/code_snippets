@@ -1,0 +1,6 @@
+#############################################################################
+# PS1 configuration for the terminal emulators				    #
+# This is done so as to get the proper username@host logo with proper color #
+#############################################################################
+# add the following line to bashrc file and bash_profile if needed
+PS1='\e[1;31m[\u\e[1;37m@\e[m\e[1;31m\h\e[m \e[1;37m\W\e[m\e[1;31m]\$\e[m '
