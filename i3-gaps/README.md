@@ -12,6 +12,7 @@ Note:
 ## things to configure
 * i3blocks
 * pcmanfm manager
+* sound check
 
 ## things to install in addition
 * rofi <instead of dmenu>
