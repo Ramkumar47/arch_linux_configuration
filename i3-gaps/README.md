@@ -10,7 +10,8 @@ Note:
 
 ## things to install in addition
 * rofi <instead of dmenu>
-* i3block
+* i3blocks
+* i3lock-blur from AUR
 
 ## things to be installed and play around with
 * pywal : for auto colorschemes that can be applied across all software
