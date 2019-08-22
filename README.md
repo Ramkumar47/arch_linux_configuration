@@ -7,14 +7,10 @@ Each directory will have its own configuration files along with a README.md file
 
 * the bashrc file is also similar to bash_profile and can be added after checking the needed.
 
-* in addition to Rxvt-unicode, Ranger is also customizable, specially its keybindings. hence added
-
-
 ## applications to install for fresh installation
 * firefox
 * pcmanfm
 * rxvt-unicode
-* Ranger
 
 ## Things to be configured
-* Ranger
+* pcmanfm for colorschemes
