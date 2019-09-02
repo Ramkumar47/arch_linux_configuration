@@ -11,6 +11,7 @@ Each directory will have its own configuration files along with a README.md file
 * firefox
 * pcmanfm
 * rxvt-unicode
+* bash-completion "for autocomplete"
 
 ## Things to be configured
 * pcmanfm for colorschemes
