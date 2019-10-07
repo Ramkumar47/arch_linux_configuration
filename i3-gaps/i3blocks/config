@@ -1,0 +1,32 @@
+# i3blocks configuration file
+# The dependencies for each block si described in each script directory.
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[cpu_usage]
+command=cpu_usage/cpu_usage
+interval=10
+LABEL=CPU :
+# min_width=CPU:
+T_WARN=50
+T_CRIT=80
+DECIMALS=1
+
+[volume]
+command=volume/volume
+LABEL=VOL
+interval=once
+signal=10
+STEP=5%
+
+[memory]
+command=memory/memory
+label=Memory :
+interval=30
+
+[time]
+command=date '+%Y-%h-%d %_I:%M:%S %p'
+interval=1
