@@ -11,7 +11,9 @@ Each directory will have its own configuration files along with a README.md file
 * firefox
 * pcmanfm
 * rxvt-unicode
-* bash-completion "for autocomplete"
+* bash-completion "for autocomplete" if using bash.
+* fonts from https://github.com/powerline/fonts
+* zsh shell and oh-my-zsh https://ohmyz.sh/
 
 ## Things to be configured
 * pcmanfm for colorschemes
