@@ -14,7 +14,7 @@ interval=10
 [cpu_usage]
 command=cpu_usage/cpu_usage
 interval=10
-LABEL=CPU :
+LABEL= :
 # min_width=CPU:
 T_WARN=50
 T_CRIT=80
@@ -22,26 +22,28 @@ DECIMALS=1
 
 [volume]
 command=volume/volume
-LABEL=VOL :
+# LABEL=VOL :
+LABEL= :
 interval=once
 signal=10
 STEP=5%
 
 [memory]
 command=memory/memory
-label=Memory :
+# label=Memory :
+label= :
 interval=10
 
 [disk]
 command=disk/disk
-LABEL=ROOT :
+LABEL= :
 DIR=/
 ALERT_LOW=10
 interval=30
 
 [disk]
 command=disk/disk
-LABEL=HOME :
+LABEL= :
 # DIR=$HOME
 ALERT_LOW=10
 interval=30
