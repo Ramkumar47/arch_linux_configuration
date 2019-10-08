@@ -14,6 +14,7 @@ Each directory will have its own configuration files along with a README.md file
 * bash-completion "for autocomplete" if using bash.
 * fonts from https://github.com/powerline/fonts
 * zsh shell and oh-my-zsh https://ohmyz.sh/
+* ttf-font-awesome font package for font symbols
 
 ## Things to be configured
 * pcmanfm for colorschemes
