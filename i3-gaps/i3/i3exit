@@ -2,7 +2,12 @@
 
 # this requires i3lock-blur to be installed from AUR
 lock() {
-    i3lock -f
+    # i3lock -f
+    rm /tmp/i3lock.png
+    image="/tmp/i3lock.png"
+    scrot $image
+    convert $image -blur "2x8" $image
+    i3lock -i $image
 }
 
 case "$1" in
