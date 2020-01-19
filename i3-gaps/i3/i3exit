@@ -1,12 +1,10 @@
 #!/bin/sh
 
-# this requires i3lock-blur to be installed from AUR
 lock() {
-    # i3lock -f
-    rm /tmp/i3lock.png
     image="/tmp/i3lock.png"
+    rm $image
     scrot $image
-    convert $image -blur "2x8" $image
+    convert $image -blur "0x8" $image
     i3lock -i $image
 }
 
