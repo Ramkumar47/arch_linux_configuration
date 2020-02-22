@@ -8,14 +8,14 @@ Note:
 ## list and overview of contents
 "i3/" : i3wm configuration
 "rofi/" : configuration and theme chosen for rofi launcher
+"polybar/" : configuration for polybar
 
 ## things to configure
-* i3blocks
 * pcmanfm manager
 
 ## things to install in addition
 * rofi <instead of dmenu>
-* i3blocks
+* polybar from AUR, and siji iconic font from AUR
 * i3lock-blur from AUR
 
 ## things to be installed and play around with
@@ -23,6 +23,11 @@ Note:
 
 ## Notes for Rofi
 rofi files in the cache has to be cleared in order to remove the history of searches "~/.cache/"
+
+## notes for polybar ##
+  * both polybar and the supporting iconic font *siji* has to be retrieved from AUR
+  * i3bar section in i3 configuration file has to be commented and replaced by polybar launch script command
+  * by default polybar is enabled due to its quite advanced features than i3bar and i3blocks
 
 # Code snippets
 The file "code_snippets" contains small snippets of configuration that have to be added in specific config files so as to implement the need. The details of implementation are given in the same file.
