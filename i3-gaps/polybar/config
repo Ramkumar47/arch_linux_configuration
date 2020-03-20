@@ -46,7 +46,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = wlan cpu memory filesystem alsa date powermenu
+modules-right = eth wlan cpu memory filesystem alsa date powermenu
 ; modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = center
@@ -245,3 +245,21 @@ menu-2-1-exec = menu-open-0
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+; format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+; label-disconnected = %ifname% disconnected
+label-disconnected = LAN down
+label-disconnected-foreground = ${colors.foreground-alt}
