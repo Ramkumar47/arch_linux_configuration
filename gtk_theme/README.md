@@ -1,11 +1,16 @@
 # GTK theme #
-This folder contains **gtkrc-2.0** file, which has to be placed as **~/.gtkrc-2.0** i.e. under hidden state in home directory.
+This folder contains three things
+  * gtkrc-2.0 file
+  * icon theme "myIcons"
+  * gtk theme "myTheme"
 
-## Things needed to work ##
-These packages can be installed from pacman repository
-  * arc-gtk-theme package
-  * arc-icon-theme package
+## installation procedure ##
+  * copy the gtkrc-2.0 file to the home directory under hidden state
+	  > cp gtkrc-2.0 ~/.gtkrc-2.0
+  * make two hidden directories for themes installation ".icons" and ".themes"
+	  > mkdir ~/.themes ~/.icons
+  * copy the themes to their respective directories; myTheme to .themes and myIcons to .icons directories
+	  > cp -r myTheme ~/.themes/ && cp -r myIcons ~/.icons/
 
-This theme configuration is applied to all applications that are based on gtk.
-
-The main reason for this gtk theming is to apply a dark theme to pcmanfm file manager
+These themes are made using oomox gtk theme editor. The source is taken from github
+https://github.com/themix-project/oomox#using-with-tiling-wms
