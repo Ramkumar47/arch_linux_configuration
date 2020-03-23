@@ -5,8 +5,9 @@ This folder contains three things
   * gtk theme "myTheme"
 
 ## installation procedure ##
-  * copy the gtkrc-2.0 file to the home directory under hidden state
+  * copy the **gtkrc-2.0 file** to the home directory under hidden state
 	  > cp gtkrc-2.0 ~/.gtkrc-2.0
+  * copy the **gtk-3.0 folder** to the ~/.config/ directory for gtk3.0 applications
   * make two hidden directories for themes installation ".icons" and ".themes"
 	  > mkdir ~/.themes ~/.icons
   * copy the themes to their respective directories; myTheme to .themes and myIcons to .icons directories
