@@ -168,13 +168,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit lock, mode "default"
-    bindsym s exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit suspend, mode "default"
-    # bindsym u exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit logout, mode "default"
-    bindsym h exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id bash /home/ramkumar/.config/i3/i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id bash $HOME/.config/i3/i3exit lock, mode "default"
+    bindsym s exec --no-startup-id bash $HOME/.config/i3/i3exit suspend, mode "default"
+    # bindsym u exec --no-startup-id bash $HOME/.config/i3/i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id bash $HOME/.config/i3/i3exit logout, mode "default"
+    bindsym h exec --no-startup-id bash $HOME/.config/i3/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id bash $HOME/.config/i3/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id bash $HOME/.config/i3/i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -252,7 +252,7 @@ gaps inner 14
 gaps outer -2
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 smart_borders on
@@ -295,7 +295,7 @@ mode "$mode_gaps_outer" {
 }
 
 # wallpaper execution
-exec_always feh --bg-scale /home/ramkumar/Pictures/wallpaper.jpg
+exec_always feh --bg-scale $HOME/Pictures/wallpaper.jpg
 
 # turning numlock always on
 exec_always --no-startup-id numlockx on
@@ -304,3 +304,15 @@ exec_always --no-startup-id numlockx on
 bindsym $mod+Prior exec "amixer set Master 5%+ unmute && pkill -RTMIN+10 i3blocks"
 bindsym $mod+Next exec "amixer set Master 5%- unmute && pkill -RTMIN+10 i3blocks"
 bindsym $mod+Home exec "amixer sset Master toggle && pkill -RTMIN+10 i3blocks"
+
+# adjusting screen brightness
+set $mode_brightness Brightness: (+) increase, (-) decrease, (0) reset 70%
+bindsym $mod+Mod1+b mode "$mode_brightness"
+mode "$mode_brightness"{
+     bindsym plus exec $HOME/.config/i3/brightctl.sh increase
+     bindsym minus exec $HOME/.config/i3/brightctl.sh decrease
+     bindsym 0 exec $HOME/.config/i3/brightctl.sh reset
+
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
