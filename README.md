@@ -8,14 +8,8 @@ Each directory will have its own configuration files along with a README.md file
 * the bashrc file is also similar to bash_profile and can be added after checking the needed.
 
 ## applications to install for fresh installation
-* firefox
-* pcmanfm
-* rxvt-unicode
-* bash-completion "for autocomplete" if using bash.
-* fonts from https://github.com/powerline/fonts
-* zsh shell and oh-my-zsh https://ohmyz.sh/
-* ttf-font-awesome font package for font symbols: i3blocks to work properly.
-* siji iconic font from AUR for polybar to work properly,
+  * use pkglist.txt generated using pacman hook to install all the needed stuff
 
 ## Things to be configured
-* pcmanfm for colorschemes
+  * zoom settings for urxvt
+  * popup calendar settings

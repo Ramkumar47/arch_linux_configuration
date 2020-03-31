@@ -10,16 +10,13 @@ Note:
 "rofi/" : configuration and theme chosen for rofi launcher
 "polybar/" : configuration for polybar
 
-## things to configure
-* pcmanfm manager
-
-## things to install in addition
-* rofi <instead of dmenu>
-* polybar from AUR, and siji iconic font from AUR
-* i3lock-blur from AUR
+## things to install from AUR
+* polybar
+* siji font
+* yay
 
 ## things to be installed and play around with
-* i3Blocks instead of i3Status
+* polybar instead of i3Status
 
 ## Notes for Rofi
 rofi files in the cache has to be cleared in order to remove the history of searches "~/.cache/"
