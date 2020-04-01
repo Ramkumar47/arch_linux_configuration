@@ -7,10 +7,12 @@ awesome-terminal-fonts
 base
 binutils
 bison
+calc
 dhcp
 dhcpcd
 dialog
 emacs
+extremetuxracer
 fakeroot
 feh
 file
@@ -42,6 +44,7 @@ m4
 make
 man-db
 msmtp
+mupdf
 nano
 neofetch
 netctl
@@ -61,6 +64,7 @@ rxvt-unicode
 scrot
 sed
 siji-git
+sl
 sudo
 sysstat
 texinfo
@@ -69,8 +73,10 @@ ttf-hack
 unzip
 vi
 vim
+wget
 which
 wpa_supplicant
+xdman
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
