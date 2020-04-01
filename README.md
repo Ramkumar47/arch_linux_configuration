@@ -13,3 +13,4 @@ Each directory will have its own configuration files along with a README.md file
 ## Things to be configured
   * zoom settings for urxvt
   * popup calendar settings
+  * zathura pdf reader

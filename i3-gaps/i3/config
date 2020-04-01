@@ -233,8 +233,8 @@ exec_always --no-startup-id fix_xcursor
 # polybar configuration
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+# # hide/unhide i3status bar
+# bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -316,3 +316,6 @@ mode "$mode_brightness"{
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
+
+# dunst notification daemon startup
+exec_always --no-startup-id dunst -c $HOME/.config/dunst/dunstrc
