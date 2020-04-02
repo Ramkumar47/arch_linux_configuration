@@ -29,6 +29,7 @@ go
 grep
 groff
 grub
+gsimplecal
 gzip
 htop
 i3-gaps
@@ -71,9 +72,11 @@ sl
 sudo
 sysstat
 texinfo
+texlive-bin
 ttf-font-awesome
 ttf-hack
 unzip
+urxvt-perls
 vi
 vim
 wget
