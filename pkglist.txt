@@ -52,6 +52,7 @@ nano
 neofetch
 netctl
 numlockx
+openssh
 p7zip
 pacman
 pandoc
@@ -79,9 +80,11 @@ unzip
 urxvt-perls
 vi
 vim
+vlc
 wget
 which
 wpa_supplicant
+xclip
 xcompmgr
 xdman
 xf86-video-vesa

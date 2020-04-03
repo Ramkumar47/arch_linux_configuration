@@ -13,7 +13,7 @@
 background = #111
 background-alt = #444
 foreground = #ffffff
-foreground-alt = #555
+foreground-alt = #777
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -41,12 +41,12 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-; font-2 = FontAwesome:pixelsize=10;1
+font-2 = siji:pixelsize=15;1
+font-3 = FontAwesome:pixelsize=15;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = eth wlan cpu memory filesystem alsa date powermenu
+modules-right = eth wlan cpu memory storage alsa Date
 ; modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = center
@@ -130,20 +130,39 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-; format-prefix = " "
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+; format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage:2%%
+click-left = notify-send "test"
 
 [module/memory]
 type = internal/memory
 interval = 2
 ; format-prefix = " "
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-underline = #4bffdc
 label = %percentage_used%%
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = " %A, %d %b %Y"
+; date-alt = " "
+
+time = %I:%M:%S
+; time-alt = %H:%M:%S
+
+format-background = #474747
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+05/03/2020
+label = %date% %time%
 
 [module/wlan]
 type = internal/network
@@ -164,31 +183,13 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/date]
-type = internal/date
-interval = 1
-
-date = " %A, %d %b %Y"
-; date-alt = " "
-
-time = %I:%M:%S
-; time-alt = %H:%M:%S
-
-format-background = #474747
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %date% %time%
+ramp-signal-foreground = ${colors.foreground}
 
 [module/alsa]
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -263,3 +264,25 @@ format-disconnected-underline = ${self.format-connected-underline}
 ; label-disconnected = %ifname% disconnected
 label-disconnected = LAN down
 label-disconnected-foreground = ${colors.foreground-alt}
+
+; custom Modules ------------------------------------
+
+[module/Date]
+type = custom/script
+format = <label>
+format-background = #474747
+format-underline = #0a6cf5
+exec = date
+click-left = gsimplecal
+interval = 10
+
+[module/storage]
+type = custom/script
+format = <label>
+format-prefix = ": "
+format-prefix-foreground = $(colors.foreground-alt)
+label-foreground = $(colors.foreground)
+format-underline = #345678
+exec = df -h | awk '$6 == "/"{print $5}'
+interval = 300
+click-left = notify-send -u low "$(df -h | awk -f $HOME/.config/polybar/storage.awk)"
