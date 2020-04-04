@@ -21,8 +21,10 @@ alert = #bd2c40
 [bar/kali]
 width = 100%
 height = 25
-radius = 5.0
+radius = 0.0
 fixed-center = false
+
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -30,28 +32,25 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 5
-border-color = #00000000
+border-size = 1
+border-color = #000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=15;1
-font-3 = FontAwesome:pixelsize=15;1
+font-1 = Symbols Nerd Font:pixelsize=15;1
+font-2 = FontAwesome:pixelsize=15;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = eth wlan cpu memory storage alsa Date
-; modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = ArchModule eth wlan CPUModule MemoryModule StorageModlue alsa DateModule
 
 tray-position = center
 tray-padding = 6
-; tray-background = #0063ff
 tray-background = #0000ff
 
 cursor-click = pointer
@@ -130,8 +129,7 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-; format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage:2%%
@@ -140,8 +138,7 @@ click-left = notify-send "test"
 [module/memory]
 type = internal/memory
 interval = 2
-; format-prefix = " "
-format-prefix = " "
+format-prefix = "﬙ "
 format-prefix-foreground = ${colors.foreground}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -158,7 +155,7 @@ time = %I:%M:%S
 
 format-background = #474747
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 05/03/2020
@@ -169,34 +166,39 @@ type = internal/network
 interface = wlp0s29f7u4
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = 說 <ramp-signal> %{F#00ff00}<label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = wifi down
+label-disconnected = ﲁ wifi down
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 10%
+ramp-signal-1 = 20%
+ramp-signal-2 = 30%
+ramp-signal-3 = 40%
+ramp-signal-4 = 50%
+ramp-signal-5 = 60%
+ramp-signal-6 = 70%
+ramp-signal-7 = 80%
+ramp-signal-8 = 90%
+ramp-signal-9 = 100%
 ramp-signal-foreground = ${colors.foreground}
 
 [module/alsa]
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-volume-foreground = ${root.foreground}
+label-volume = " "
+label-volume-foreground = ${colors.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "遼 "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
-bar-volume-width = 10
+bar-volume-width = 8
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -254,7 +256,7 @@ interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -262,12 +264,12 @@ label-connected = %local_ip%
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ; label-disconnected = %ifname% disconnected
-label-disconnected = LAN down
+label-disconnected =  LAN down
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ; custom Modules ------------------------------------
 
-[module/Date]
+[module/DateModule]
 type = custom/script
 format = <label>
 format-background = #474747
@@ -276,7 +278,7 @@ exec = date
 click-left = gsimplecal
 interval = 10
 
-[module/storage]
+[module/StorageModule]
 type = custom/script
 format = <label>
 format-prefix = ": "
@@ -286,3 +288,35 @@ format-underline = #345678
 exec = df -h | awk '$6 == "/"{print $5}'
 interval = 300
 click-left = notify-send -u low "$(df -h | awk -f $HOME/.config/polybar/storage.awk)"
+
+[module/ArchModule]
+type = custom/ipc
+hook-0 = urxvt --hold -e neofetch
+format = "%{F#0000ff}"
+click-left = polybar-msg hook ArchModule 1
+
+[module/MemoryModule]
+type = custom/script
+format = <label>
+label = %output%
+format-prefix = "﬙ "
+format-foreground = $(colors.foreground)
+format-underline = #f99804
+label-foreground = $(colors.foreground)
+
+exec = $HOME/.config/polybar/polybarFunctions.sh memoryModule
+interval = 10
+click-left = $HOME/.config/polybar/polybarFunctions.sh showMIP
+
+[module/CPUModule]
+type = custom/script
+format = <label>
+label = %output%
+format-prefix = " "
+format-foreground = $(colors.foreground)
+format-underline = #ff540b
+label-foreground = $(colors.foreground)
+
+exec = $HOME/.config/polybar/polybarFunctions.sh cpuModule
+interval = 10
+click-left = $HOME/.config/polybar/polybarFunctions.sh showCIP
