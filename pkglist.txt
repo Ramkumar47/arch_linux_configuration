@@ -30,6 +30,7 @@ grep
 groff
 grub
 gsimplecal
+gucharmap
 gzip
 htop
 i3-gaps
@@ -50,14 +51,15 @@ msmtp
 mupdf
 nano
 neofetch
+neovim
 netctl
 numlockx
 openssh
 p7zip
 pacman
-pandoc
 patch
 pcmanfm
+picom
 pkgconf
 polybar
 powerline
@@ -68,7 +70,6 @@ rsync
 rxvt-unicode
 scrot
 sed
-siji-git
 sl
 sudo
 sysstat
@@ -76,6 +77,7 @@ texinfo
 texlive-bin
 ttf-font-awesome
 ttf-hack
+ttf-nerd-fonts-symbols
 unzip
 urxvt-perls
 vi
@@ -85,7 +87,6 @@ wget
 which
 wpa_supplicant
 xclip
-xcompmgr
 xdman
 xf86-video-vesa
 xorg-bdftopcf
