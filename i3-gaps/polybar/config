@@ -47,7 +47,7 @@ font-2 = FontAwesome:pixelsize=15;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = ArchModule eth wlan CPUModule MemoryModule StorageModlue alsa DateModule
+modules-right = ArchModule eth WifiModule CPUModule MemoryModule StorageModlue alsa DateModule
 
 tray-position = center
 tray-padding = 6
@@ -276,7 +276,7 @@ format-background = #474747
 format-underline = #0a6cf5
 exec = date
 click-left = gsimplecal
-interval = 10
+interval = 1
 
 [module/StorageModule]
 type = custom/script
@@ -320,3 +320,10 @@ label-foreground = $(colors.foreground)
 exec = $HOME/.config/polybar/polybarFunctions.sh cpuModule
 interval = 10
 click-left = $HOME/.config/polybar/polybarFunctions.sh showCIP
+
+[module/WifiModule]
+type = custom/script
+format = <label>
+label = %output%
+exec = $HOME/.config/polybar/polybarFunctions.sh wirelessFunction
+format-underline = #9f78e1

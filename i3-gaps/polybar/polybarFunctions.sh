@@ -57,4 +57,24 @@ function showCIP()
     notify-send -u low "$(echo "Cores: \t Percent  Temperature: \n\n"$cco"\n\n\t-----------------\n\nProcesses: \t\t Percentage:\n\n"$cip)"
 }
 
+# cutom wifi function
+function wirelessFunction()
+{
+    # reporting the wifi down status
+    if [[ "$(cat /sys/class/net/wlp0s29f7u4/operstate)" = 'down' ]]; then
+	# echo "down"
+	echo "%{F#777777}ﲁ wifi down"
+	exit
+    fi
+
+    # retrieving wifi strength
+    QUALITY=$(grep "wlp0s29f7u4" /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+    # retrieving wifi ssid name
+    SSID=$(iw dev | grep "ssid" | awk '{print $2}')
+
+    # reporting wifi on status
+    echo "%{F#ffffff}說 "$QUALITY"% %{F#00ff00}"$SSID
+}
+
 "$@"				# line to call functions from terminal
