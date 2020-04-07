@@ -9,7 +9,7 @@ function memoryModule()
     if (( $memoryUsed < 40 ))	# safe limit
     then
 	print $memoryUsed"%"
-    elif (( $memoryUsed > 40 && $memoryUsed < 80 )) # warning limit
+    elif (( $memoryUsed >= 40 && $memoryUsed < 80 )) # warning limit
     then
 	print "%{F#ffff00}"$memoryUsed"%"
     else				# overload limit
