@@ -44,10 +44,11 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = Symbols Nerd Font:pixelsize=15;1
 font-2 = FontAwesome:pixelsize=15;1
+font-3 = Noto Color Emoji:scale=10;0
 
 modules-left = i3
 modules-center = xwindow
-modules-right = ArchModule eth WifiModule CPUModule MemoryModule StorageModlue alsa DateModule
+modules-right = ArchModule eth WifiModule CPUModule MemoryModule StorageModule alsa DateModule
 
 tray-position = center
 tray-padding = 6
@@ -191,10 +192,10 @@ ramp-signal-foreground = ${colors.foreground}
 type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
-label-volume = " "
+label-volume = "🔈 "
 label-volume-foreground = ${colors.foreground}
 
-format-muted-prefix = "遼 "
+format-muted-prefix = "🔇 "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
@@ -281,7 +282,7 @@ interval = 1
 [module/StorageModule]
 type = custom/script
 format = <label>
-format-prefix = ": "
+format-prefix = "💽: "
 format-prefix-foreground = $(colors.foreground-alt)
 label-foreground = $(colors.foreground)
 format-underline = #345678
@@ -312,7 +313,7 @@ click-left = $HOME/.config/polybar/polybarFunctions.sh showMIP
 type = custom/script
 format = <label>
 label = %output%
-format-prefix = " "
+format-prefix = "🖥"
 format-foreground = $(colors.foreground)
 format-underline = #ff540b
 label-foreground = $(colors.foreground)
@@ -327,3 +328,12 @@ format = <label>
 label = %output%
 exec = $HOME/.config/polybar/polybarFunctions.sh wirelessFunction
 format-underline = #9f78e1
+
+[module/CompositorModule]
+type = custom/ipc
+format = hi
+hook-0 = $HOME/.config/polybar/polybarFunctions.sh CompositorToggler enable
+hook-1 = $HOME/.config/polybar/polybarFunctions.sh CompositorToggler disable
+click-left = polybar-msg hook CompositorModule 1
+click-right = polybar-msg hook CompositorModule 2
+initial = 1

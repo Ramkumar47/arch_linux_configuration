@@ -33,7 +33,7 @@ function cpuModule()
     if (( $cpuUsed < 40 ))
     then			# safe limit
 	print $cpuUsed"%"
-    elif (( $cpuUsed > 40 && $cpuUsed < 80 ))
+    elif (( $cpuUsed >= 40 && $cpuUsed < 80 ))
     then			# warn limit
 	print "%{F#ffff00}"$cpuUsed"%"
     else			# overload limit
@@ -57,7 +57,7 @@ function showCIP()
     notify-send -u low "$(echo "Cores: \t Percent  Temperature: \n\n"$cco"\n\n\t-----------------\n\nProcesses: \t\t Percentage:\n\n"$cip)"
 }
 
-# cutom wifi function
+# custom wifi function
 function wirelessFunction()
 {
     # reporting the wifi down status
@@ -75,6 +75,23 @@ function wirelessFunction()
 
     # reporting wifi on status
     echo "%{F#ffffff}說 "$QUALITY"% %{F#00ff00}"$SSID
+}
+
+# compositor toggle function
+function CompositorToggler()
+{
+    if [[ $1 == "enable" ]]
+    then
+	nice -n19 picom&
+	disown
+	echo "started"
+    elif [[ $1 == "disable" ]]
+    then
+	pkill picom
+	echo "killed"
+    else
+	echo "invalid Option"
+    fi
 }
 
 "$@"				# line to call functions from terminal
