@@ -87,8 +87,11 @@ sudo
 sysstat
 texinfo
 texlive-bin
+ttf-anonymous-pro
+ttf-dejavu
 ttf-font-awesome
 ttf-hack
+ttf-inconsolata
 ttf-nerd-fonts-symbols
 unzip
 urxvt-perls

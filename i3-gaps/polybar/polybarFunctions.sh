@@ -94,4 +94,18 @@ function CompositorToggler()
     fi
 }
 
+# caps lock key notification function
+function CapsLockNotifier()
+{
+    option=`xset q | grep 00: | awk '{print $4}'`
+
+    if [[ $option == "off" ]]
+    then
+	print ""
+    elif [[ $option == "on" ]]
+    then
+	print "%{B#ff0000}%{F#000000} Caps ON "
+    fi
+}
+
 "$@"				# line to call functions from terminal

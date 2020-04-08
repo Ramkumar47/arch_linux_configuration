@@ -45,14 +45,15 @@ font-0 = fixed:pixelsize=10;1
 font-1 = Symbols Nerd Font:pixelsize=15;1
 font-2 = FontAwesome:pixelsize=15;1
 font-3 = Noto Color Emoji:scale=10;0
+font-4 = DejaVu Sans Mono:style=Bold:pixelsize=10;1"
 
-modules-left = i3
+modules-left = i3 CapsLockModule
 modules-center = xwindow
-modules-right = ArchModule eth WifiModule CPUModule MemoryModule StorageModule alsa DateModule
+modules-right =  ArchModule eth WifiModule CPUModule MemoryModule StorageModule alsa DateModule
 
-tray-position = center
+tray-position = right
 tray-padding = 6
-tray-background = #0000ff
+tray-background = #aaaaaa
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -99,7 +100,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+; pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -276,6 +277,7 @@ format = <label>
 format-background = #474747
 format-underline = #0a6cf5
 exec = date
+label-margin = 2
 click-left = gsimplecal
 interval = 1
 
@@ -329,11 +331,9 @@ label = %output%
 exec = $HOME/.config/polybar/polybarFunctions.sh wirelessFunction
 format-underline = #9f78e1
 
-[module/CompositorModule]
+[module/CapsLockModule]
 type = custom/ipc
-format = hi
-hook-0 = $HOME/.config/polybar/polybarFunctions.sh CompositorToggler enable
-hook-1 = $HOME/.config/polybar/polybarFunctions.sh CompositorToggler disable
-click-left = polybar-msg hook CompositorModule 1
-click-right = polybar-msg hook CompositorModule 2
+format-overline = #ffffff
+format-font = 5
+hook-0 = $HOME/.config/polybar/polybarFunctions.sh CapsLockNotifier
 initial = 1
