@@ -108,4 +108,32 @@ function CapsLockNotifier()
     fi
 }
 
+# sound module notification function
+function SoundNotifier()
+{
+    volume=`amixer sget Master | awk '(NR == 5){print $4}'`
+    stat=`amixer sget Master | awk '(NR == 5){print $6}'`
+
+    volume=`echo $volume | cut -d "[" -f 2 | cut -d "]" -f 1`
+    stat=`echo $stat | cut -d "[" -f 2 | cut -d "]" -f 1`
+
+    # echo $volume $stat
+
+    if [[ $stat == "on" ]]
+    then
+    	echo "蓼 "$volume
+    elif [[ $stat == "off" ]]
+    then
+	 echo "%{F#777}遼 muted"
+    fi
+
+    # click-toggle
+    if [[ $1 == "clickToggle" ]]
+    then
+	amixer sset Master toggle
+	polybar-msg hook SoundModule 1
+    fi
+
+}
+
 "$@"				# line to call functions from terminal
