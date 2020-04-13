@@ -23,6 +23,7 @@ firefox
 flex
 gawk
 gcc
+gcc-fortran
 gettext
 gimp
 git
@@ -41,6 +42,7 @@ gst-plugins-espeak
 gst-plugins-good
 gst-plugins-ugly
 gucharmap
+gvim
 gzip
 htop
 i3-gaps
@@ -69,6 +71,7 @@ numlockx
 openssh
 p7zip
 pacman
+pandoc
 patch
 pcmanfm
 picom
@@ -79,7 +82,7 @@ python-pip
 ranger
 rofi
 rsync
-rxvt-unicode
+rxvt-unicode-patched
 scrot
 sed
 sl
@@ -96,8 +99,8 @@ ttf-nerd-fonts-symbols
 unzip
 urxvt-perls
 vi
-vim
 vlc
+w3m
 wget
 which
 wpa_supplicant

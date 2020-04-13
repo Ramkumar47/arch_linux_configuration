@@ -19,7 +19,5 @@ Each directory will have its own configuration files along with a README.md file
 the file **pkglist.txt** contains the list of all packages that are installed
 in the up-to-date system.
 
-the file **basic_pkglist.txt** contains the list of packages that are required for
-the basic install with all the modules working.
-
-use **pkglist.txt** to restore the system completely or use **basic_pkglist.txt** for the basic installation.
+* in the file, **rxvt-unicode-patched** will be present instead of **rxvt-unicode**, the former is from AUR.
+* **rxvt-unicode-patched** is installed as it has support for ranger image previews.
