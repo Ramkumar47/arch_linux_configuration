@@ -10,22 +10,54 @@ lock() {
 
 case "$1" in
     lock)
-        lock
-        ;;
+	option=`dmenuPrompt "are you sure to LOCK?" "no\nyes"`
+	if [[ $option == "yes" ]]
+	then
+	  lock
+	fi
+	;;
+
     logout)
-        i3-msg exit
+     	option=`dmenuPrompt "are you sure to LOGOUT?" "no\nyes"`
+    	if [[ $option == "yes" ]]
+   	then
+		exit	
+    	fi	
         ;;
+
     suspend)
-        lock && systemctl suspend
+        #lock && systemctl suspend
+	option=`dmenuPrompt "are you sure to SUSPEND?" "no\nyes"`
+    	if [[ $option == "yes" ]]
+   	then
+		lock && systemctl suspend
+    	fi
         ;;
+       
     hibernate)
-        lock && systemctl hibernate
+        #lock && systemctl hibernate
+	option=`dmenuPrompt "are you sure to HIBERNATE?" "no\nyes"`
+    	if [[ $option == "yes" ]]
+   	then
+		lock && systemctl hibernate
+    	fi
         ;;
+        
     reboot)
-        systemctl reboot
+        #systemctl reboot
+	option=`dmenuPrompt "are you sure to REBOOT?" "no\nyes"`
+    	if [[ $option == "yes" ]]
+   	then
+	        systemctl reboot
+    	fi
         ;;
+
     shutdown)
-        systemctl poweroff
+	option=`dmenuPrompt "are you sure to SHUTDOWN?" "no\nyes"`
+	if [[ $option == "yes" ]]
+	then
+		systemctl poweroff
+	fi
         ;;
     *)
         echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"

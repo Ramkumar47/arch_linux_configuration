@@ -42,6 +42,8 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec urxvt -e ranger
 bindsym $mod+F4 exec emacs
+bindsym $mod+Shift+F4 exec urxvt -e vim
+bindsym $mod+Ctrl+F4 exec urxvt -e gvim
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -196,7 +198,7 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id picom -b
+#exec --no-startup-id picom -b
 
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
