@@ -1,0 +1,8 @@
+#!/bin/zsh 
+
+# dmenu prompt script to enable any prompting action with options
+
+echo -e $2 |  dmenu -i -l 10 -p "$1" \
+-fn "Dejavu Sans Mono:pixelsize=15" -nb "#111111" \
+-nf "#cccccc" -sb "#ff1111" -sf "#000000"
+
