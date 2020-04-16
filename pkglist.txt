@@ -1,3 +1,4 @@
+alacritty
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -56,9 +57,11 @@ libreoffice-fresh
 libtool
 linux
 linux-firmware
+lynx
 m4
 make
 man-db
+mesa-demos
 mplayer
 msmtp
 mupdf
@@ -67,6 +70,7 @@ neofetch
 neovim
 netctl
 noto-fonts-emoji
+ntfs-3g
 numlockx
 openssh
 p7zip
@@ -74,6 +78,7 @@ pacman
 pandoc
 patch
 pcmanfm
+perl-uri
 picom
 pkgconf
 polybar
@@ -82,7 +87,7 @@ python-pip
 ranger
 rofi
 rsync
-rxvt-unicode-patched
+rxvt-unicode
 scrot
 sed
 sl
@@ -90,12 +95,14 @@ sudo
 sysstat
 texinfo
 texlive-bin
+tree
 ttf-anonymous-pro
 ttf-dejavu
 ttf-font-awesome
 ttf-hack
 ttf-inconsolata
 ttf-nerd-fonts-symbols
+udisks2
 unzip
 urxvt-perls
 vi
@@ -106,6 +113,7 @@ which
 wpa_supplicant
 xclip
 xdman
+xf86-video-intel
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
