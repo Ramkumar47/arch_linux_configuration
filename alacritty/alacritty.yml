@@ -8,7 +8,11 @@ env:
 
 window:
   # Window title
-  title: Alacritty 
+  title: Alacritty
+
+  padding:
+    x: 3
+    y: 3
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -86,7 +90,7 @@ font:
   size: 12.0
 
   # If `true`, bold text is drawn using the bright color variants.
-  draw_bold_text_with_bright_colors: true 
+  draw_bold_text_with_bright_colors: true
 
 # Visual Bell -- ignored
 
@@ -104,7 +108,7 @@ selection:
   save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: false 
+dynamic_title: false
 
 # cursor settings
 cursor:
@@ -308,8 +312,10 @@ key_bindings:
   - { key: End,       mods: Control,   action: ScrollToBottom, mode: ~Alt       }
 
   # opens new terminal in the same directory
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance } 
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
 
   # scrollLineUp and down
   - { key: Up,      mods: Control,   action: ScrollLineUp,    mode: ~Alt       }
   - { key: Down,    mods: Control,   action: ScrollLineDown,  mode: ~Alt       }
+
+  - { key: F, mods: Control, command: { program: "sh", args: ["-c", "echo hello"] } }
