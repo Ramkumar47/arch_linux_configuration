@@ -14,7 +14,6 @@ dhcpcd
 dialog
 dmenu
 dunst
-emacs
 extremetuxracer
 fakeroot
 feh
@@ -53,7 +52,6 @@ i3status
 imagemagick
 iw
 libnotify
-libreoffice-fresh
 libtool
 linux
 linux-firmware
@@ -71,6 +69,7 @@ neovim
 netctl
 noto-fonts-emoji
 ntfs-3g
+ntp
 numlockx
 openssh
 p7zip
@@ -85,7 +84,6 @@ polybar
 powerline
 python-pip
 ranger
-rofi
 rsync
 rxvt-unicode
 scrot
@@ -95,6 +93,7 @@ sudo
 sysstat
 texinfo
 texlive-bin
+texlive-core
 tree
 ttf-anonymous-pro
 ttf-dejavu
@@ -112,7 +111,6 @@ wget
 which
 wpa_supplicant
 xclip
-xdman
 xf86-video-intel
 xf86-video-vesa
 xorg-bdftopcf
