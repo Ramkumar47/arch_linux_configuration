@@ -6,9 +6,11 @@ autoconf
 automake
 awesome-terminal-fonts
 base
+biber
 binutils
 bison
 calc
+cmatrix
 dhcp
 dhcpcd
 dialog
@@ -20,6 +22,7 @@ feh
 file
 findutils
 firefox
+firefox-i18n-ta
 flex
 gawk
 gcc
@@ -92,8 +95,10 @@ sl
 sudo
 sysstat
 texinfo
+texlive-bibtexextra
 texlive-bin
 texlive-core
+texlive-latexextra
 tree
 ttf-anonymous-pro
 ttf-dejavu
