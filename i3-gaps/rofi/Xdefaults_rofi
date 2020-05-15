@@ -1,0 +1,17 @@
+
+! Rofi Settings
+
+! "Enabled modi" Set from: Default
+rofi.modi:                           window,run,ssh,drun
+! "Number of lines" Set from: XResources
+rofi.lines:                          10
+! "Disable history in run/ssh" Set from: Default
+rofi.disable-history:                true
+! "Color scheme for normal row" Set from: XResources
+rofi.color-normal:                   #000000,  #ffffff,  #000000,  #ff0000,  #000000
+! "Color scheme for urgent row" Set from: XResources
+rofi.color-urgent:                   #ffff00,  #dc322f,  #eee8d5,  #dc322f,  #fdf6e3
+! "Color scheme for active row" Set from: XResources
+rofi.color-active:                   #000000,  #268bd2,  #eee8d5,  #268bd2,  #fdf6e3
+! "Color scheme window" Set from: XResources
+rofi.color-window:                   #000000,      #ff0000,  #888888

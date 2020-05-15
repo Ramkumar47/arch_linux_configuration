@@ -68,7 +68,6 @@ msmtp
 mupdf
 nano
 neofetch
-neovim
 netctl
 noto-fonts-emoji
 ntfs-3g
@@ -87,6 +86,7 @@ polybar
 powerline
 python-pip
 ranger
+rofi
 rsync
 rxvt-unicode
 scrot

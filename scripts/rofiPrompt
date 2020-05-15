@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# inputs, $1: prompt, $2: options, $3: no of lines to show
+
+echo $2 | rofi -dmenu -p $1 -lines $3 -hide-scrollbar
