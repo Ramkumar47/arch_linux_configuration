@@ -22,3 +22,10 @@ in the up-to-date system.
 
 * in the file, **rxvt-unicode-patched** will be present instead of **rxvt-unicode**, the former is from AUR.
 * **rxvt-unicode-patched** is installed as it has support for ranger image previews.
+
+## No password Option ##
+for certain super user options like shutdown, reboot etc can be
+made to work without password by adding the following line in the/etc/sudoers file.
+> %wheel ALL=(ALL) NOPASSWD: /sbin/shutdown/,/sbin/reboot,/sbin/poweroff
+just below the line
+> %wheel ALL=(ALL) ALL
