@@ -55,6 +55,7 @@ imagemagick
 iw
 libnotify
 libreoffice-fresh
+libreoffice-fresh-ta
 libtool
 linux
 linux-firmware
@@ -85,7 +86,6 @@ pkgconf
 polybar
 powerline
 powerline-fonts
-powerline-vim
 python-pip
 ranger
 rofi
