@@ -14,7 +14,7 @@ case "$1" in
 	option=`rofiPrompt "are you sure to LOCK?" "no\nyes" 2`
 	if [[ $option == "yes" ]]
 	then
-	  lock
+	  i3-msg lock
 	fi
 	;;
 
