@@ -43,6 +43,7 @@ gst-plugins-base
 gst-plugins-espeak
 gst-plugins-good
 gst-plugins-ugly
+gtk-engine-murrine
 gucharmap
 gvim
 gzip
@@ -95,6 +96,7 @@ scrot
 sed
 sl
 sudo
+supertux
 sysstat
 termite
 termite-terminfo
@@ -112,10 +114,13 @@ ttf-inconsolata
 ttf-linux-libertine
 ttf-linux-libertine-g
 ttf-nerd-fonts-symbols
+ttf-tamil
 udisks2
 unzip
 urxvt-perls
 vi
+viewnior
+vimb
 vlc
 w3m
 wget
