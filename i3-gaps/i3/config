@@ -43,6 +43,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 # Start Applications
 bindsym $mod+F2 exec firefox
+bindsym $mod+Shift+F2 exec vimb
 bindsym $mod+F3 exec termite -e ranger
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec gvim

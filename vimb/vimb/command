@@ -1,0 +1,55 @@
+new
+tabnew
+go
+open www.google.com
+open youtube.com
+tabopen archlinux.org
+ls
+tabnew
+tabopen
+open www.google.com
+reload
+open youtube
+home
+help
+open youtube.com
+open google.com
+open mail.google.com
+open youtube.com
+open www.duckduckgo.com
+quit
+set homepage=start.duckduckgo.com
+set home=start.duckduckgo.com
+set home-page=start.duckduckgo.com
+q
+open start.duckduckgo.com
+open https://start.duckduckgo.com/
+open https://duckduckgo.com/
+open www.lbry.com
+open https://lbry.com/news
+tabopen youtube.com
+open archlinux.org
+open youtube.com
+open https://wiki.archlinux.org/index.php/List_of_games
+open https://duckduckgo.com/?q=youtube&t=hk&ia=web
+open duckduckgo.com
+open duckduckgo.com
+open duckduckgo.com
+duck
+open duck
+open g
+open d
+open duck
+open 
+open 
+
+open 
+open s
+open duck
+open duck
+open duck
+open duck
+open duck
+tabopen duck
+tabopen duck
+tabopen https://fanglingsu.github.io/vimb/man.html
