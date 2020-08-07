@@ -29,3 +29,8 @@ made to work without password by adding the following line in the/etc/sudoers fi
 > %wheel ALL=(ALL) NOPASSWD: /sbin/shutdown/,/sbin/reboot,/sbin/poweroff
 just below the line
 > %wheel ALL=(ALL) ALL
+
+## packages for wifi-menu ##
+the packages required for wifi-menu to work are as follows
+5 packages - iw, wpa_supplicant, netctl, dialog, dhcpcd
+these packages can be installed during pacstrap command at main installation
