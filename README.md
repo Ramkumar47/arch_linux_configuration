@@ -32,5 +32,6 @@ just below the line
 
 ## packages for wifi-menu ##
 the packages required for wifi-menu to work are as follows
-5 packages - iw, wpa_supplicant, netctl, dialog, dhcpcd
+5 packages - iw, wpa_supplicant, netctl, dialog, dhcpcd, iwd
 these packages can be installed during pacstrap command at main installation
+and enable iwd, dhcpcd for wifi to work when using iwctl
