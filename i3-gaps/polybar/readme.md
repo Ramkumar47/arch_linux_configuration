@@ -15,3 +15,8 @@ install it from AUR
 * press enter, the icon will be shown in the editor, it might appear differntly
 		if the siji font is not configured for vim, but it will appear on Polybar correctly.
 
+## configuration details
+there will be two configurations
+
+config2 - this contains mostly custom script modules
+config - this contains mostly inbuild modules, it has prefered look
