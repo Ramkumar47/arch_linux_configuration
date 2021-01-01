@@ -1,53 +1,95 @@
 # i3blocks configuration file
-# The dependencies for each block si described in each script directory.
-
+# the shell script functions are defined in shellFunctions.sh file
+# in the same directory.
 
 # Global properties
 separator=true
 separator_block_width=15
 
-[iface]
-command=iface/iface
-color=#00FF00
-interval=10
-
-[cpu_usage]
-command=cpu_usage/cpu_usage
-interval=10
-LABEL= :
-# min_width=CPU:
-T_WARN=50
-T_CRIT=80
-DECIMALS=1
-
-[volume]
-command=volume/volume
-# LABEL=VOL :
-LABEL= :
+[capslock_module]
+command=zsh shellFunctions.sh CapsLockNotifier
 interval=once
 signal=10
-STEP=5%
 
-[memory]
-command=memory/memory
-# label=Memory :
-label= :
+# [eth_module]
+# command=zsh shellFunctions.sh ethernetFunction
+# interval=10
+
+[wifi_module]
+command=zsh shellFunctions.sh wirelessFunction
+interval=5
+
+[cpu_module]
+command=zsh shellFunctions.sh cpuModule
+interval=5
+
+[ram_module]
+command=zsh shellFunctions.sh memoryModule
 interval=10
 
-[disk]
-command=disk/disk
-LABEL= :
-DIR=/
-ALERT_LOW=10
-interval=30
+[disk_usage_module]
+command=zsh shellFunctions.sh diskUsage
+interval=60
 
-[disk]
-command=disk/disk
-LABEL= :
-# DIR=$HOME
-ALERT_LOW=10
-interval=30
+[ramkumar]
+full_text=ராம் குமார்
+command=i3-msg "exec termite --hold -e neofetch" > /dev/null
+interval=0
+
+[sound_module]
+command=zsh shellFunctions.sh SoundNotifier
+interval=once
+signal=11
 
 [time]
-command=date '+%Y-%h-%d %_I:%M:%S %p'
+command=zsh shellFunctions.sh dateTime
 interval=1
+
+# inbuilt modules- just for reference------------------------------------------
+
+# [cpu_usage] # inbuilt module
+# command=cpu_usage/cpu_usage
+# interval=1
+# LABEL=:
+# # min_width=CPU:
+# T_WARN=50
+# T_CRIT=80
+# DECIMALS=1
+
+# [caps-lock]
+# command=xset -q | grep Caps | awk '{ print $2, $3, $4 }'
+# interval=once
+# signal=10
+
+# [iface]
+# command=iface/iface
+# color=#00FF00
+# interval=10
+
+# [memory]
+# command=memory/memory
+# # label=Memory :
+# label= :
+# interval=10
+
+# [volume]
+# command=volume/volume
+# # LABEL=VOL :
+# LABEL= :
+# interval=once
+# signal=10
+# STEP=5%
+
+# [disk]
+# command=disk/disk
+# LABEL= :
+# DIR=/
+# ALERT_LOW=10
+# interval=30
+#
+# [disk]
+# command=disk/disk
+# LABEL= :
+# DIR=/home
+# ALERT_LOW=10
+# interval=30

@@ -13,9 +13,6 @@ Each directory will have its own configuration files along with a README.md file
 ## custom scripts folder
 * create the custom scripts folder as explained in the **scripts** directory, for accessing custom scripts at any path.
 
-## Things to be configured
-* icon fonts in terminals
-
 ## pkglist details ##
 the file **pkglist.txt** contains the list of all packages that are installed
 in the up-to-date system.

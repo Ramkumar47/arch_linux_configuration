@@ -9,6 +9,7 @@ biber
 binutils
 bison
 calc
+clipmenu
 cmatrix
 dhcp
 dhcpcd
@@ -17,6 +18,7 @@ dmenu
 dunst
 extremetuxracer
 fakeroot
+falkon
 feh
 file
 findutils
@@ -53,7 +55,9 @@ i3blocks
 i3lock
 i3status
 imagemagick
+intel-ucode
 iw
+iwd
 libnotify
 libreoffice-fresh
 libreoffice-fresh-ta
@@ -65,6 +69,7 @@ m4
 make
 man-db
 mesa-demos
+moc
 mplayer
 msmtp
 mupdf
@@ -84,17 +89,16 @@ pcmanfm
 perl-uri
 picom
 pkgconf
-polybar
 powerline
 powerline-fonts
 python-pip
 ranger
+reflector
 rofi
 rsync
 rxvt-unicode
 scrot
 sed
-sl
 sudo
 supertux
 sysstat
@@ -114,13 +118,11 @@ ttf-inconsolata
 ttf-linux-libertine
 ttf-linux-libertine-g
 ttf-nerd-fonts-symbols
-ttf-tamil
 udisks2
 unzip
 urxvt-perls
 vi
 viewnior
-vimb
 vlc
 w3m
 wget
@@ -136,7 +138,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
-xorg-luit
 xorg-mkfontscale
 xorg-server
 xorg-server-common
@@ -144,7 +145,6 @@ xorg-server-devel
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
-xorg-server-xwayland
 xorg-sessreg
 xorg-setxkbmap
 xorg-smproxy

@@ -27,7 +27,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite
 # bindsym $mod+Shift+Return exec env LIBGL_ALWAYS_SOFTWARE=1 alacritty #launch alacritty without gpu acceleration.
-bindsym $mod+Shift+Return exec i3-sensible-terminal
+# bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -43,13 +43,14 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 # Start Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+Shift+F2 exec vimb
+bindsym $mod+Shift+F2 exec falkon
 bindsym $mod+F3 exec termite -e ranger
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec gvim
 bindsym $mod+Shift+F4 exec termite -e vim
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+F5 exec termite -e mocp
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -66,7 +67,7 @@ bindsym $mod+Shift+Right move right
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+# bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
@@ -209,7 +210,44 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # polybar configuration
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+	i3bar_command i3bar
+	status_command i3blocks
+	position top
+
+    # whether to show workspace buttons on left
+	workspace_buttons yes
+	# min width of workspace buttons, 0 defaults to text width
+	workspace_min_width 0
+
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+	# tray_output primary
+#	tray_output eDP1
+
+	bindsym button4 nop
+	bindsym button5 nop
+    font xft:URWGothic-Book 10
+	strip_workspace_numbers yes
+
+    colors {
+        background #000000
+        statusline #FFFFFF
+        separator  #FF0000
+
+#                          border  backgr. text
+        focused_workspace  #F9FAF9 #990000 #ffffff
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #222D31 #EEE8D5
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
+    }
+}
+
+# i3blocks signal calls
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -282,12 +320,12 @@ exec_always --no-startup-id numlockx on
 
 # adjusting volume
 set $mode_volume Volume: (+) increase, (-) decrease, (0) reset 50%, (m) mute/unmute
-bindsym $mod+Mod1+v mode "$mode_volume"
+bindsym $mod+Shift+v mode "$mode_volume"
 mode "$mode_volume"{
-     bindsym plus exec "amixer sset Master 5%+ unmute && polybar-msg hook SoundModule 1"
-     bindsym minus exec "amixer sset Master 5%- unmute && polybar-msg hook SoundModule 1"
-     bindsym 0 exec "amixer sset Master 50% unmute && polybar-msg hook SoundModule 1"
-     bindsym m exec "amixer sset Master toggle && polybar-msg hook SoundModule 1"
+     bindsym plus exec "amixer sset Master 5%+ unmute && pkill -SIGRTMIN+11 i3blocks"
+     bindsym minus exec "amixer sset Master 5%- unmute && pkill -SIGRTMIN+11 i3blocks"
+     bindsym 0 exec "amixer sset Master 50% unmute && pkill -SIGRTMIN+11 i3blocks"
+     bindsym m exec "amixer sset Master toggle && pkill -SIGRTMIN+11 i3blocks"
 
      bindsym Return mode "default"
      bindsym Escape mode "default"
@@ -295,7 +333,7 @@ mode "$mode_volume"{
 
 # adjusting screen brightness
 set $mode_brightness Brightness: (+) increase, (-) decrease, (0) reset 70%
-bindsym $mod+Mod1+b mode "$mode_brightness"
+bindsym $mod+Shift+b mode "$mode_brightness"
 mode "$mode_brightness"{
      bindsym plus exec $HOME/.config/i3/brightctl.sh increase
      bindsym minus exec $HOME/.config/i3/brightctl.sh decrease
@@ -309,4 +347,4 @@ mode "$mode_brightness"{
 exec_always --no-startup-id dunst -c $HOME/.config/dunst/dunstrc
 
 # capslock release configuration
-bindsym --release Caps_Lock exec polybar-msg hook CapsLockModule 1
+# bindsym --release Caps_Lock exec polybar-msg hook CapsLockModule 1
