@@ -213,6 +213,7 @@ mode "resize" {
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id killall -q clipit; notify-send -u low "clipit manager running"; nice -n19 clipit
 
 # polybar configuration
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh

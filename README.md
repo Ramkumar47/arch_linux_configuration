@@ -41,3 +41,11 @@ to set the qt-theme, launch application called **qt5ct** and choose the dark col
 that will get applied over all the qt based applications.
 
 all the required packages are already included in the "pkglist.txt" file.
+
+## configuring clipit clipboard manager
+clipit application is configured to run at start. It is installed from their
+github repository than from AUR, just for simplicity.
+
+after base and extended installation, clone the repository https://github.com/CristianHenzel/ClipIt
+and follow their instructions to install it. The repository files can be removed
+after installation for cleanup.
