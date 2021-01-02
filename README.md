@@ -32,3 +32,12 @@ the packages required for wifi-menu to work are as follows
 5 packages - iw, wpa_supplicant, netctl, dialog, dhcpcd, iwd
 these packages can be installed during pacstrap command at main installation
 and enable iwd, dhcpcd for wifi to work when using iwctl
+
+## instructions for mouse pointer and other themes setup
+to set mouse pointer, launch the application **lxappearance** and go to *Mouse Cursor* tab, then choose *breeze* style.
+it will set the mouse pointer to kde-breeze style.
+
+to set the qt-theme, launch application called **qt5ct** and choose the dark colo scheme
+that will get applied over all the qt based applications.
+
+all the required packages are already included in the "pkglist.txt" file.

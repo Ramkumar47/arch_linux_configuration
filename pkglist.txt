@@ -8,7 +8,12 @@ base
 biber
 binutils
 bison
+breeze
+breeze-grub
+breeze-gtk
+breeze-icons
 calc
+capitaine-cursors
 clipmenu
 cmatrix
 dhcp
@@ -58,12 +63,15 @@ imagemagick
 intel-ucode
 iw
 iwd
+krita
 libnotify
 libreoffice-fresh
 libreoffice-fresh-ta
 libtool
 linux
 linux-firmware
+lxappearance-gtk3
+lxqt-config
 lynx
 m4
 make
@@ -92,6 +100,7 @@ pkgconf
 powerline
 powerline-fonts
 python-pip
+qt5ct
 ranger
 reflector
 rofi
