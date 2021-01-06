@@ -184,6 +184,12 @@ function diskUsage()
 	# printing output
 	printf " %2.0f %%   %2.0f %%\n" $rootPercentage $homePercentage
 	printf " %2.0f %%   %2.0f %%\n" $rootPercentage $homePercentage
+
+	case "$BLOCK_BUTTON" in
+			1|2|3)
+					i3-msg -q "exec notify-send -u low \"\$(dfc)\""
+	esac
+
 }
 
 # calendar and date time function

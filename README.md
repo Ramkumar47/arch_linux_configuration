@@ -49,3 +49,10 @@ github repository than from AUR, just for simplicity.
 after base and extended installation, clone the repository https://github.com/CristianHenzel/ClipIt
 and follow their instructions to install it. The repository files can be removed
 after installation for cleanup.
+
+## managing policy toolkit
+polkit is a toolkit used to handle unprivileged process to speak to previliged
+processes (https://wiki.archlinux.org/index.php/Polkit). To give privilige to
+unprivileged process, it will ask for password through an "authorization agent"
+It is that popup dialog that asks for password. At present, the configuration
+was done with package **polkit-gnome**.
