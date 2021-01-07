@@ -56,3 +56,11 @@ processes (https://wiki.archlinux.org/index.php/Polkit). To give privilige to
 unprivileged process, it will ask for password through an "authorization agent"
 It is that popup dialog that asks for password. At present, the configuration
 was done with package **polkit-gnome**.
+
+## configuring qutebrowser
+qutebrowser is installed from the offical repository and is available in the
+pkglist.txt file.
+after installation, follow the wiki **https://wiki.archlinux.org/index.php/Qutebrowser**
+to set the searchengines default to google and other things.
+
+qutebrowser is bound to $mod+Shift+F2 on the configuration.
