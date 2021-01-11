@@ -39,9 +39,9 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+w exec rofi -show window
 
 # Start Applications
-bindsym $mod+F2 exec firefox
-bindsym $mod+Shift+F2 exec qutebrowser
-bindsym $mod+Ctrl+F2 exec falkon
+bindsym $mod+F2 exec qutebrowser
+bindsym $mod+Shift+F2 exec firefox
+bindsym $mod+Ctrl+F2 exec surf https://www.google.com
 bindsym $mod+F3 exec termite -e ranger
 bindsym $mod+Shift+F3 exec pcmanfm
 bindsym $mod+F4 exec gvim
@@ -164,9 +164,6 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-
-# open surf with border normal
-for_window [title="surf"] border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

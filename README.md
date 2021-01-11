@@ -60,7 +60,6 @@ was done with package **polkit-gnome**.
 ## configuring qutebrowser
 qutebrowser is installed from the offical repository and is available in the
 pkglist.txt file.
-after installation, follow the wiki **https://wiki.archlinux.org/index.php/Qutebrowser**
-to set the searchengines default to google and other things.
+after installation, follow the readme instructions in the qutebrowser/ directory
 
-qutebrowser is bound to $mod+Shift+F2 on the configuration.
+qutebrowser is bound to $mod+F2 on the configuration.
