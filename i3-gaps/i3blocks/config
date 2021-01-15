@@ -31,15 +31,20 @@ interval=10
 command=zsh shellFunctions.sh diskUsage
 interval=60
 
-[ramkumar]
-full_text=ராம் குமார்
-command=i3-msg "exec termite --hold -e neofetch" > /dev/null
-interval=0
+# [ramkumar]
+# full_text=ராம் குமார்
+# command=i3-msg "exec termite --hold -e neofetch" > /dev/null
+# interval=0
 
 [sound_module]
 command=zsh shellFunctions.sh SoundNotifier
 interval=once
 signal=11
+
+[brightness_module]
+command=zsh shellFunctions.sh brightnessFunction
+interval=once
+signal=12
 
 [time]
 command=zsh shellFunctions.sh dateTime

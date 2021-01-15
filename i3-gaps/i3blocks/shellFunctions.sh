@@ -222,4 +222,30 @@ function ethernetFunction()
 		fi
 }
 
+# brightness function
+function brightnessFunction()
+{
+	# extracting current brightness level in 0-1.0 range
+	brightness=`xrandr --current --verbose | grep -i "brightness" | cut -d " " -f 2`
+	brightness=$(( brightness * 100 ))
+	brightness=`echo $brightness | cut -d '.' -f 1`
+
+	if (( $brightness > 80))
+	then
+		echo " "$brightness
+	elif (( $brightness > 60 && $brightness <= 80))
+	then
+		echo " "$brightness
+	elif (( $brightness > 40 && $brightness <= 60))
+	then
+		echo " "$brightness
+	elif (( $brightness > 20 && $brightness <= 40))
+	then
+		echo " "$brightness
+	elif (( $brightness > 0 && $brightness <= 20))
+	then
+		echo " "$brightness
+	fi
+}
+
 "$@"				# line to call functions from terminal
