@@ -340,9 +340,9 @@ mode "$mode_volume"{
 set $mode_brightness Brightness: (+) increase, (-) decrease, (0) reset 70%
 bindsym $mod+Shift+b mode "$mode_brightness"
 mode "$mode_brightness"{
-     bindsym plus exec $HOME/.config/i3/brightctl.sh increase
-     bindsym minus exec $HOME/.config/i3/brightctl.sh decrease
-     bindsym 0 exec $HOME/.config/i3/brightctl.sh reset
+     bindsym plus exec "$HOME/.config/i3/brightctl.sh increase && pkill -SIGRTMIN+12 i3blocks"
+     bindsym minus exec "$HOME/.config/i3/brightctl.sh decrease && pkill -SIGRTMIN+12 i3blocks"
+     bindsym 0 exec "$HOME/.config/i3/brightctl.sh reset && pkill -SIGRTMIN+12 i3blocks"
 
      bindsym Return mode "default"
      bindsym Escape mode "default"
