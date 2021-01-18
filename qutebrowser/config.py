@@ -131,6 +131,14 @@ config.set('content.notifications', False, 'https://www.reddit.com')
 # Type: String
 c.hints.border = '1px solid #282a36'
 
+# When to show the statusbar.
+# Type: String
+# Valid values:
+#   - always: Always show the statusbar.
+#   - never: Always hide the statusbar.
+#   - in-mode: Show the statusbar when in modes other than normal mode.
+c.statusbar.show = 'in-mode'
+
 # Padding (in pixels) for the statusbar.
 # Type: Padding
 c.statusbar.padding = {'top': 6, 'right': 8, 'bottom': 6, 'left': 8}
@@ -184,7 +192,7 @@ c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?hl=en&q={}', 'd
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://google.com'
+c.url.start_pages = '~/.config/qutebrowser/homepage/homepage.html'
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+body
+	{
+background-image: url("image.jpg");
+background-repeat: no-repeat;
+background-color: #000;
+background-position: 50% 50%;
+height: 780px;
+color: #999;
+}
+
+ .textentry {
+    position:  absolute;
+    top:       650px;
+    left:      30%;
+	bottom:    200px;
+    height:    4%;
+	width:  40%;
+	background-color: #000;
+	border-color: #210;
+	color: #999;
+	font-size: 100%;
+  }
+
+</style>
+	<body>
+		<!-- title  -->
+		<h3> <center> <p> Quieter you become, more you are able to hear </p> </center> </h3>
+		<!-- seach bar definition -->
+		<dev id="search">
+		<input id="search-field" type="text" title="Search" class="textentry">
+		</dev>
+	</body>
+
+    <script>
+        // Search on enter key event
+        document.getElementById("search-field").addEventListener("keydown",  event => {
+            if (event.keyCode === 13) {
+                var val = document.getElementById("search-field").value;
+                window.open("https://google.com/search?q=" + val,"_self");
+            }
+        });
+    </script>
+</html>
