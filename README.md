@@ -63,3 +63,8 @@ pkglist.txt file.
 after installation, follow the readme instructions in the qutebrowser/ directory
 
 qutebrowser is bound to $mod+F2 on the configuration.
+
+## configuring grubmenu
+grub menu can be configured by the application *grub-customizer* (in pkglist.txt)
+during configuration, for background choose "wallpaper_19.png" and for
+font, choose *DejaVu Sans Mono Bold 15*, and Normal font foreground and background will be white and transparent, respectively. highlighed font fore and background will be black and red respectively. saving it will set the grub theme to the need
