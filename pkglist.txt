@@ -20,6 +20,7 @@ cgal
 clipmenu
 cmake
 cmatrix
+code
 dfc
 dhcp
 dhcpcd
@@ -91,6 +92,7 @@ m4
 make
 man-db
 mesa-demos
+min
 moc
 mplayer
 msmtp
@@ -143,6 +145,7 @@ texlive-bibtexextra
 texlive-bin
 texlive-core
 texlive-latexextra
+transmission-gtk
 tree
 ttf-anonymous-pro
 ttf-dejavu
@@ -217,7 +220,6 @@ xorg-xwininfo
 xorg-xwud
 xterm
 yay
-youtube-dl
 zathura
 zathura-cb
 zathura-djvu
