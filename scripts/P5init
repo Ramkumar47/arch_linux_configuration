@@ -1,0 +1,30 @@
+#!/bin/zsh
+# P5js setup initializer code, similar to foamNewApp of OpenFOAM
+
+# defining source directory location
+SRC_DIR=~/.scripts/src_p5js
+
+# getting sketchName and using it to create work folder
+SketchString=`echo $1`
+
+mkdir -p $SketchString
+
+# copying p5 setup files into the work folder
+cp -r $SRC_DIR/library $SketchString/
+cp $SRC_DIR/index.html $SketchString/
+
+# making name strings from sketchString
+SketchTitle=$SketchString
+SketchName="sketch_"$SketchString".js"
+
+# naming operations on index.html
+sed -i 's/SketchTitleGoesInHere/'$SketchTitle'/' $SketchString/index.html
+sed -i 's/SketchNameGoesInHere/'$SketchName'/' $SketchString/index.html
+
+# initializing sketchFile
+echo "//------------------------------------------------------------------------------" > $SketchString/$SketchName
+echo "// Sketch: "$SketchString"\n// created on $(date)" >> $SketchString/$SketchName
+echo "//------------------------------------------------------------------------------\n" >> $SketchString/$SketchName
+cat $SRC_DIR/template.js >> $SketchString/$SketchName
+
+echo "created P5 setup: "$SketchString
