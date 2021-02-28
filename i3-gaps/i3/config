@@ -215,6 +215,8 @@ exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-ag
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id killall -q clipit; notify-send -u low "clipit manager running"; nice -n19 clipit
+exec_always --no-startup-id nice -n19 blueman-applet
+exec_always --no-startup-id nice -n19 pulseaudio
 
 # polybar configuration
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -325,18 +327,32 @@ exec_always --no-startup-id numlockx on
 # bindsym $mod+Next exec "amixer set Master 5%- unmute && pkill -RTMIN+10 i3blocks"
 # bindsym $mod+Home exec "amixer sset Master toggle && pkill -RTMIN+10 i3blocks"
 
-# adjusting volume
+# # adjusting volume ALSA
+# set $mode_volume Volume: (+) increase, (-) decrease, (0) reset 50%, (m) mute/unmute
+# bindsym $mod+Shift+v mode "$mode_volume"
+# mode "$mode_volume"{
+#      bindsym plus exec "amixer sset Master 5%+ unmute && pkill -SIGRTMIN+11 i3blocks"
+#      bindsym minus exec "amixer sset Master 5%- unmute && pkill -SIGRTMIN+11 i3blocks"
+#      bindsym 0 exec "amixer sset Master 50% unmute && pkill -SIGRTMIN+11 i3blocks"
+#      bindsym m exec "amixer sset Master toggle && pkill -SIGRTMIN+11 i3blocks"
+#
+#      bindsym Return mode "default"
+#      bindsym Escape mode "default"
+# }
+
+# adjusting volume PulseAudio
 set $mode_volume Volume: (+) increase, (-) decrease, (0) reset 50%, (m) mute/unmute
 bindsym $mod+Shift+v mode "$mode_volume"
 mode "$mode_volume"{
-     bindsym plus exec "amixer sset Master 5%+ unmute && pkill -SIGRTMIN+11 i3blocks"
-     bindsym minus exec "amixer sset Master 5%- unmute && pkill -SIGRTMIN+11 i3blocks"
-     bindsym 0 exec "amixer sset Master 50% unmute && pkill -SIGRTMIN+11 i3blocks"
-     bindsym m exec "amixer sset Master toggle && pkill -SIGRTMIN+11 i3blocks"
+     bindsym plus exec "pamixer -i 5 && pkill -SIGRTMIN+11 i3blocks"
+     bindsym minus exec "pamixer -d 5 && pkill -SIGRTMIN+11 i3blocks"
+     bindsym 0 exec "pamixer --set-volume 50 && pkill -SIGRTMIN+11 i3blocks"
+     bindsym m exec "pamixer -t && pkill -SIGRTMIN+11 i3blocks"
 
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
+
 
 # adjusting screen brightness
 set $mode_brightness Brightness: (+) increase, (-) decrease, (0) reset 70%
