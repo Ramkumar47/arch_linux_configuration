@@ -10,8 +10,14 @@ SketchString=`echo $1`
 mkdir -p $SketchString
 
 # copying p5 setup files into the work folder
-cp -r $SRC_DIR/library $SketchString/
-cp $SRC_DIR/index.html $SketchString/
+if [[ $2 == "off" ]]
+then
+	cp -r $SRC_DIR/library $SketchString/
+	cp $SRC_DIR/index_offline.html $SketchString/index.html
+elif [[ $2 == "on" ]]
+then
+	cp $SRC_DIR/index_online.html $SketchString/index.html
+fi
 
 # making name strings from sketchString
 SketchTitle=$SketchString
