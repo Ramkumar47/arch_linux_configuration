@@ -130,6 +130,7 @@ polkit-gnome
 powerline
 powerline-fonts
 pulseaudio
+pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-equalizer
 python-i3ipc
