@@ -36,8 +36,15 @@ interval=60
 # command=i3-msg "exec termite --hold -e neofetch" > /dev/null
 # interval=0
 
+# # ALSA sound control
+# [sound_module]
+# command=zsh shellFunctions.sh SoundNotifier
+# interval=once
+# signal=11
+
+# PulseAudio sound control
 [sound_module]
-command=zsh shellFunctions.sh SoundNotifier
+command=zsh shellFunctions.sh SoundNotifierPA
 interval=once
 signal=11
 

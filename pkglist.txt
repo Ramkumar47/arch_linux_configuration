@@ -9,6 +9,9 @@ base
 biber
 binutils
 bison
+blueman
+bluez
+bluez-utils
 boost
 breeze
 breeze-grub
@@ -17,6 +20,7 @@ breeze-icons
 calc
 capitaine-cursors
 cgal
+chromium
 clipmenu
 cmake
 cmatrix
@@ -44,6 +48,7 @@ gettext
 gimp
 git
 go
+gparted
 grep
 groff
 grub
@@ -77,6 +82,7 @@ ipython
 iw
 iwd
 jq
+kdeconnect
 krita
 libnotify
 libreoffice-fresh
@@ -85,6 +91,7 @@ libtool
 libvoikko
 linux
 linux-firmware
+lshw
 lxappearance-gtk3
 lxqt-config
 lynx
@@ -108,16 +115,24 @@ nuspell
 openssh
 p7zip
 pacman
+pamixer
 pandoc
+pasystray
 patch
+pavucontrol
 pcmanfm
 pdfjs
+perl-rename
 perl-uri
 picom
 pkgconf
 polkit-gnome
 powerline
 powerline-fonts
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pulseaudio-equalizer
 python-i3ipc
 python-matplotlib
 python-numpy

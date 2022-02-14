@@ -26,11 +26,19 @@ function memoryModule()
 			printf ": %3.0f %%\n" $memoryUsed
 			printf ": %3.0f %%\n" $memoryUsed
 			echo "#ffff00"
+
+			# mip=`ps axch -o cmd,%mem --sort=-%mem | head -n 10`
+			# echo $mip > ~/Documents/memory_intensive_processes.txt
+
 	else				# overload limit
 			printf ": %3.0f %%\n" $memoryUsed
 			printf ": %3.0f %%\n" $memoryUsed
 			echo "#ffffff"
 			echo "#ff0000"
+
+			# mip=`ps axch -o cmd,%mem --sort=-%mem | head -n 10`
+			# echo $mip > ~/Documents/memory_intensive_processes.txt
+
 	fi
 
 	case "$BLOCK_BUTTON" in
@@ -62,11 +70,20 @@ function cpuModule()
 			printf ":%2.0f %%\n" $cpuUsed
 			printf ":%4.0f %%\n" $cpuUsed
 			echo "#ffff00"
+
+			# cip=`ps axch -o cmd,%cpu --sort=-%cpu | head -n 10` # cpu intensive processes list
+			# echo $cip > ~/Documents/cpu_intensive_processes.txt
+			# i3-msg -q "exec zsh $HOME/.config/i3blocks/shellFunctions.sh showCIP"
+
     else			# overload limit
 			printf ":%2.0f %%\n" $cpuUsed
 			printf ":%4.0f %%\n" $cpuUsed
 			echo "#ffffff"
 			echo "#ff0000"
+
+			# cip=`ps axch -o cmd,%cpu --sort=-%cpu | head -n 10` # cpu intensive processes list
+			# echo $cip > ~/Documents/cpu_intensive_processes.txt
+			# i3-msg -q "exec zsh $HOME/.config/i3blocks/shellFunctions.sh showCIP"
     fi
 
 	case "$BLOCK_BUTTON" in
@@ -136,7 +153,7 @@ function CapsLockNotifier()
     fi
 }
 
-# sound module notification function
+# sound module notification function ALSA
 function SoundNotifier()
 {
     volume=`amixer sget Master | awk '(NR == 5){print $4}'`
@@ -173,6 +190,39 @@ function SoundNotifier()
 
 }
 
+# sound module notification function PulseAudio
+function SoundNotifierPA()
+{
+
+	volStatus=`pamixer --get-volume-human`
+	if [[ $volStatus != "muted" ]]
+	then
+		volume=`echo $volStatus | cut -d'%' -f 1`
+		if (( $volume < 40 ))
+		then
+			printf " %d %%\n" $volume
+			printf " %d %%\n" $volume
+		elif (( $volume >= 40 && $volume < 70 ))
+		then
+			printf " %d %%\n" $volume
+			printf " %d %%\n" $volume
+	    else
+			printf " %d %%\n" $volume
+			printf " %d %%\n" $volume
+		fi
+	elif [[ $volStatus == "muted" ]]
+	then
+		echo " mute"
+		echo " mute"
+		echo "#777777"
+	fi
+
+	case "$BLOCK_BUTTON" in
+			1|2|3)
+				i3-msg -q "exec pamixer -t; exec pkill -SIGRTMIN+11 i3blocks"
+    esac
+
+}
 # disk usage module function
 function diskUsage()
 {
