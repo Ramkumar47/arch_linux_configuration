@@ -1,0 +1,10 @@
+
+
+xset s off
+xset -dpms
+xset s noblank
+xset -dpms s off		# prevents screen to turn off
+xset -b    # disabling beep sounds
+
+export TERMINAL=/usr/bin/kitty
+export EDITOR=/usr/bin/gvim

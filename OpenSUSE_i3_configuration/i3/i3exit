@@ -1,0 +1,72 @@
+#!/bin/zsh
+
+lock() {
+    # i3lock color is compiled and used in here
+i3lock -i $HOME/.config/i3/lockScreens/kali1.png
+}
+
+case "$1" in
+    lock)
+    # option=`dmenuPrompt "are you sure to LOCK?" "no\nyes"`
+    option=`~/.scripts/rofiPrompt "are you sure to LOCK?" "no\nyes" 2`
+    if [[ $option == "yes" ]]
+    then
+      # i3-msg lock
+      # i3lock -B 0.5 -k
+      lock
+    fi
+    ;;
+
+    logout)
+        # option=`dmenuPrompt "are you sure to LOGOUT?" "no\nyes"`
+        option=`~/.scripts/rofiPrompt "are you sure to LOGOUT?" "no\nyes" 2`
+        if [[ $option == "yes" ]]
+    then
+        i3-msg exit
+        fi
+        ;;
+
+    suspend)
+        #lock && systemctl suspend
+    # option=`dmenuPrompt "are you sure to SUSPEND?" "no\nyes"`
+    option=`~/.scripts/rofiPrompt "are you sure to SUSPEND?" "no\nyes" 2`
+        if [[ $option == "yes" ]]
+    then
+        lock && systemctl suspend
+        fi
+        ;;
+
+    hibernate)
+        #lock && systemctl hibernate
+    # option=`dmenuPrompt "are you sure to HIBERNATE?" "no\nyes"`
+    option=`~/.scripts/rofiPrompt "are you sure to HIBERNATE?" "no\nyes" 2`
+        if [[ $option == "yes" ]]
+    then
+        lock && systemctl hibernate
+        fi
+        ;;
+
+    reboot)
+        #systemctl reboot
+    # option=`dmenuPrompt "are you sure to REBOOT?" "no\nyes"`
+    option=`~/.scripts/rofiPrompt "are you sure to REBOOT?" "no\nyes" 2`
+        if [[ $option == "yes" ]]
+    then
+            systemctl reboot
+        fi
+        ;;
+
+    shutdown)
+    # option=`dmenuPrompt "are you sure to SHUTDOWN?" "no\nyes"`
+    option=`~/.scripts/rofiPrompt "are you sure to SHUTDOWN?" "no\nyes" 2`
+    if [[ $option == "yes" ]]
+    then
+        systemctl poweroff
+    fi
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
